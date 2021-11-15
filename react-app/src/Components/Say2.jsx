@@ -1,7 +1,7 @@
 import { useState } from "react";
-const Say = () => {
+const Say2 = () => {
   const [message, setMessage] = useState("");
-  const [color, setColor] = useState();
+  const [style, setStyle] = useState({ color: "black", backgrund: "black" });
   const handleEnter = () => {
     setMessage("어서오고");
   };
@@ -9,13 +9,17 @@ const Say = () => {
     setMessage("응~잘가");
   };
   const red = () => {
-    setColor("red");
+    handleColor("red");
   };
   const green = () => {
-    setColor("green");
+    handleColor("green");
   };
   const blue = () => {
-    setColor("blue");
+    handleColor("blue");
+  };
+
+  const handleColor = (color) => {
+    setStyle((prev) => ({ ...prev, color }));
   };
 
   return (
@@ -23,7 +27,7 @@ const Say = () => {
       <div>
         <button onClick={handleEnter}>입장</button>
         <button onClick={handleLeave}>퇴장</button>
-        <h1 style={{ color }}>{message}</h1>
+        <h1 style={{ style }}>{message}</h1>
         <button style={{ color: "red" }} onClick={red}>
           뻘건색
         </button>
@@ -37,4 +41,4 @@ const Say = () => {
     </>
   );
 };
-export default Say;
+export default Say2;

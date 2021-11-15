@@ -1,10 +1,9 @@
-import Counter from "./Components/Counter";
-import Say from "./Components/Say";
+import EventPractice from "./Components/EventPractice";
 
 function App() {
   return (
     <>
-      <Say />
+      <EventPractice />
     </>
   );
 }
