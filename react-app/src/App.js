@@ -1,9 +1,9 @@
-import IterationSample from "./Components/IterationSample";
+import VendingMachine from "./Components/VendingMachine";
 
 function App() {
   return (
     <>
-      <IterationSample />
+      <VendingMachine />
     </>
   );
 }
