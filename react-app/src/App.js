@@ -1,11 +1,11 @@
-import VendingMachine from "./Components/VendingMachine";
+import Sort from "./Components/Sort";
 
 function App() {
   return (
     <>
-      <VendingMachine />
+      <Sort />
     </>
   );
 }
 
-export default App;
+export default Sort;
