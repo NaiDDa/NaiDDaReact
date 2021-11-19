@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const IterationSample = () => {
-  const [nextId, setnextId] = useState(3);
+  // const [nextId, setnextId] = useState(3);
+  const nextId = useRef();
   const [text, setText] = useState("");
   const [arr, setArr] = useState([
     {
@@ -18,9 +19,10 @@ const IterationSample = () => {
     setText(e.target.value);
   };
   const handleClick = () => {
-    setArr([...arr, { id: nextId, text }]);
+    setArr([...arr, { id: nextId.current, text }]);
     setText("");
-    setnextId(nextId + 1);
+    //setnextId(nextId + 1);
+    nextId.current = nextId.current + 1;
   };
   const handleDelete = (id) => {
     console.log("id : " + id);
