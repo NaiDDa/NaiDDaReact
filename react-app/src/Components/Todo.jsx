@@ -141,5 +141,6 @@ const BtnDelete = styled.button`
   padding: 10px;
   background: #332e2e;
   color: white;
+  border-radius: 6px;
 `;
 export default TodoCompocent;
