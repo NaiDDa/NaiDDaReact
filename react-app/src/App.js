@@ -1,17 +1,13 @@
 import { useState } from "react";
-import NewsList from "./Components/NewsList";
+import Bootstrap from "./Components/bootstrap/Bootstrap";
 import styles from "./App.module.scss";
 
 function App() {
   const [visible, setVisible] = useState(false);
-  function printMe() {
-    console.log("완료");
-  }
-  setTimeout(printMe, 3000);
-  console.log("대기중.....");
+
   return (
     <>
-      <NewsList />
+      <Bootstrap />
     </>
   );
 }
