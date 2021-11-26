@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Bootstrap from "./Components/bootstrap/Bootstrap";
+import Todo from "./Components/todo/Todo";
 import styles from "./App.module.scss";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Bootstrap />
+      <Todo />
     </>
   );
 }

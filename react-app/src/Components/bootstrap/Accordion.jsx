@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 const List = styled.ul`
+  width: 500px;
   margin: 10px;
   padding: 0;
   list-style: none;
@@ -24,7 +25,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
-  border-top: 1px solid #c2c2c2;
+  border-bottom: 1px solid #c2c2c2;
 `;
 const Body = styled.div`
   border-top: 1px solid #c2c2c2;

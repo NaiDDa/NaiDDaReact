@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 const TodoCompocent = () => {
   const inputRef = useRef(null);
-  const [nextId, setnextId] = useState(3);
+  const [nextId, setNextId] = useState(3);
   const [text, setText] = useState("");
   const [arr, setArr] = useState([
     {
@@ -23,7 +23,7 @@ const TodoCompocent = () => {
   const handleClick = (e) => {
     setArr([...arr, { id: nextId, text, isDone: false }]);
     setText("");
-    setnextId(nextId + 1);
+    setNextId(nextId + 1);
     inputRef.current.focus();
   };
   const handleKeyPress = (e) => {
