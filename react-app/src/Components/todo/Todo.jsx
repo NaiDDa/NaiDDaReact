@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 const TodoBody = styled.div`
   margin: 0 auto;
   margin-top: 100px;
   width: 500px;
-  border: 1px solid #a36e6e;
+  border: 2px solid #a36e6e;
   border-radius: 4px;
 `;
 const TodoHead = styled.div`
@@ -18,10 +18,10 @@ const Bundle = styled.div`
   display: flex;
   justify-content: center;
   padding: 10px;
-  border-bottom: 1px solid #a36e6e;
+  border-bottom: 2px solid #a36e6e;
 `;
 const TodoInput = styled.input`
-  border: 1px solid #a36e6e;
+  border: 2px solid #a36e6e;
   border-right: none;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
@@ -29,7 +29,7 @@ const TodoInput = styled.input`
 `;
 const Button = styled.button`
   font-size: 25px;
-  border: 1px solid #a36e6e;
+  border: 2px solid #a36e6e;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   color: #a36e6e;
@@ -43,19 +43,21 @@ const TodoList = styled.ul`
 const TodoItem = styled.li`
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #a36e6e;
+  border-bottom: 2px solid #a36e6e;
   padding: 20px;
   display: flex;
 `;
 const Check = styled.input``;
 const Delete = styled.button`
-  border: 1px solid #a36e6e;
+  font-weight: 700;
+  border: 2px solid #a36e6e;
   border-radius: 4px;
   color: #a36e6e;
   background: white;
   cursor: pointer;
 `;
 const Content = styled.span`
+  color: #a36e6e;
   text-decoration: ${(p) => p.isDone && "line-through"};
 `;
 

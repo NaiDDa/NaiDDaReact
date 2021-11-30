@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled, { css } from "styled-components";
 const List = styled.ul`
   width: 500px;
@@ -41,7 +42,8 @@ const Button = styled.button`
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 `;
 
-const Accordion = ({ data, onChange }) => {
+const Accordion = ({ oData }) => {
+  const [data, setData] = useState(oData);
   const handleClick = (id) => {
     const newData = data.map((item) => ({
       ...item,
@@ -60,7 +62,7 @@ const Accordion = ({ data, onChange }) => {
     //   return item;
 
     // });
-    onChange(newData);
+    setData(newData);
   };
   return (
     <div>

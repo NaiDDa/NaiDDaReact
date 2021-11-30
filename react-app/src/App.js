@@ -1,13 +1,9 @@
-import { useState } from "react";
-import Todo from "./Components/todo/Todo";
-import styles from "./App.module.scss";
+import Bootstrap from "./Components/bootstrap/Bootstrap";
 
 function App() {
-  const [visible, setVisible] = useState(false);
-
   return (
     <>
-      <Todo />
+      <Bootstrap />
     </>
   );
 }
