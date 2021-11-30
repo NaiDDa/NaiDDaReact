@@ -25,11 +25,16 @@ const Group = () => {
       <GroupBox>
         <GroupUl>
           {dataList.map(({ groupUid, name, items }) => (
-            <Box>
-              <FoldImg src="/img/fold.svg" />
-              <GroupImg src="img/group.svg" />
-              <GroupItem>{name}</GroupItem>
-            </Box>
+            <>
+              <Box>
+                <FoldImg src="/img/fold.svg" />
+                <GroupImg src="img/group.svg" />
+                <GroupItem>{name}</GroupItem>
+              </Box>
+              {items.map((item) => (
+                <h2>{item.name}</h2>
+              ))}
+            </>
           ))}
         </GroupUl>
       </GroupBox>
