@@ -1,9 +1,12 @@
 import Bootstrap from "./Components/bootstrap/Bootstrap";
+import Group from "./Components/GroupTest/Group";
 
 function App() {
   return (
     <>
-      <Bootstrap />
+      <Group />
+
+      {/* <Bootstrap /> */}
     </>
   );
 }

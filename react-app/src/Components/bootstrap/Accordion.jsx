@@ -67,7 +67,7 @@ const Accordion = ({ oData }) => {
   return (
     <div>
       <List>
-        {data.map(({ active, title, content, id }) => (
+        {oData.map(({ active, title, content, id }) => (
           <Item active={active}>
             <Header onClick={() => handleClick(id)}>
               {title}
