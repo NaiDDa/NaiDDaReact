@@ -45,7 +45,6 @@ const TodoItem = styled.li`
   justify-content: space-between;
   border-bottom: 2px solid #a36e6e;
   padding: 20px;
-  display: flex;
 `;
 const Check = styled.input``;
 const Delete = styled.button`

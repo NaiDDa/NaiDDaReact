@@ -1,6 +1,5 @@
-import { useState } from "react";
 import Carousels from "./Carousels";
-import Accordion from "./Accordion";
+
 import Accordion2 from "./Accordion2";
 import Dropdown from "./Dropdown";
 const imageList = [
@@ -48,7 +47,6 @@ const Bootstrap = () => {
   return (
     <div>
       <Dropdown />
-      <Accordion oData={accordionData} />
       <Accordion2 data={accordionData} />
       <Carousels imageList={imageList} />
     </div>

@@ -30,7 +30,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-top: 1px solid #817f7df9;
+  border-bottom: 1px solid #dddddd;
 `;
 const Button = styled.button`
   background-color: transparent;
@@ -42,6 +42,7 @@ const Button = styled.button`
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 `;
 const Body = styled.div`
+  border-bottom: 1px solid #dddddd;
   display: none;
   transition: 0.5s;
   line-height: 25px;
