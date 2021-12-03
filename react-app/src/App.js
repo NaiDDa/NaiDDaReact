@@ -6,9 +6,9 @@ import Carousels from "./Components/Carousels/Carousels2";
 function App() {
   return (
     <>
+      <Bootstrap />
       {/* <Group /> */}
-
-      <Carousels />
+      {/* <Carousels /> */}
     </>
   );
 }

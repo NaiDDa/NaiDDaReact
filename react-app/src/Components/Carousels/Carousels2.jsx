@@ -23,6 +23,8 @@ const Wrapper = styled.div`
   overflow: hidden;
   width: 600px;
   height: 400px;
+  padding-top: 100px;
+  margin: 0 auto;
 `;
 const List = styled.div``;
 const Image = styled.img`
