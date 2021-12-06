@@ -15,7 +15,12 @@ const ModalSidebar = ({ onClose }) => {
   );
 };
 const SidebarSlide = keyframes`
+ from {
 
+ }
+ to {
+   
+ }
 `;
 const Sidebar = styled.div`
   width: 240px;
