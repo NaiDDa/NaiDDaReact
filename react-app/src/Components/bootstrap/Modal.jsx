@@ -1,8 +1,10 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
-
-const Modal = ({ onClose }) => {
+import { useBodyOverflowHidden } from "../../hooks/useBodyOverflowHidden";
+const Modal = ({ onClose, onSubmit }) => {
   const [collapse, setCollapse] = useState(false);
+  const [name, setName] = useState("");
+  useBodyOverflowHidden();
 
   const handleClose = () => {
     setCollapse(true);
@@ -11,16 +13,27 @@ const Modal = ({ onClose }) => {
       onClose();
     }, 300);
   };
+
+  const handleSubmit = () => {
+    if (window.confirm("이름변경 ㄱ?")) {
+      handleClose();
+      onSubmit(name);
+    }
+  };
   return (
     <Container collapse={collapse}>
       <Header>
         <Title>Modal heading</Title>
         <BtnX onClick={handleClose}>X</BtnX>
       </Header>
-      <Body>Woohoo, you're reading this text in a modal!</Body>
+      <Body>
+        <label>
+          Name : <input onChange={(e) => setName(e.target.value)} />
+        </label>
+      </Body>
       <Footer>
         <BtnClose onClick={handleClose}>Close</BtnClose>
-        <BtnSave>Save Changes</BtnSave>
+        <BtnSave onClick={() => onSubmit(handleSubmit)}>Save Changes</BtnSave>
       </Footer>
     </Container>
   );
@@ -48,7 +61,7 @@ const Container = styled.div`
   left: 50%;
   opacity: ${({ collapse }) => (collapse ? "0" : "1")};
   transform: ${({ collapse }) =>
-    collapse ? "translate(-50%, -30px)" : "translateX(-50%)"};
+    collapse ? "translate(-50%, -30px)" : "translate(-50%, 0)"};
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 `;
 const Header = styled.div`
