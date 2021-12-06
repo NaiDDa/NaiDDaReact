@@ -53,11 +53,17 @@ const Title = styled.div`
 
 const Btn = styled.button`
   border: none;
-  background: #fff;
+  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  padding: 10px;
+  margin: 0 10px;
+  color: #fff;
 `;
-const BtnX = styled(Btn)``;
+const BtnX = styled(Btn)`
+  background: #fff;
+  color: #000;
+`;
 const Body = styled.div`
   padding: 20px;
   text-align: center;
@@ -69,7 +75,16 @@ const Footer = styled.div`
   padding: 10px;
 `;
 const CloseBtn = styled(Btn)`
-  margin: 10px;
+   background: #a5aaad;
+  &:hover {
+    background: #585e64;
+  }
+
 `;
-const SaveBtn = styled(Btn)``;
+const SaveBtn = styled(Btn)`
+  background: #5f94e2;
+  &:hover {
+    background: #0b60e0;
+  }
+`;
 export default NickName;

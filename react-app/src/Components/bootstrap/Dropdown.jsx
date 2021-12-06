@@ -21,7 +21,6 @@ const Item = styled.a`
   display: flex;
   text-decoration: none;
   padding-left: ${({ stage }) => stage * 40};
-
   & + & {
     border-top: 1px solid #dddddd;
   }

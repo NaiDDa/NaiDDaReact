@@ -15,7 +15,7 @@ const Modal = ({ onClose, onSubmit }) => {
   };
 
   const handleSubmit = () => {
-    if (window.confirm("이름변경 ㄱ?")) {
+    if (window.confirm("변경하시겠습니까?")) {
       handleClose();
       onSubmit(name);
     }
@@ -23,7 +23,7 @@ const Modal = ({ onClose, onSubmit }) => {
   return (
     <Container collapse={collapse}>
       <Header>
-        <Title>Modal heading</Title>
+        <Title>Edit your Name</Title>
         <BtnX onClick={handleClose}>X</BtnX>
       </Header>
       <Body>

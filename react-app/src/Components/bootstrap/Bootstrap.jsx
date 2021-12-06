@@ -44,8 +44,10 @@ const Bootstrap = () => {
     setText(text);
   };
 
+
   return (
     <div style={{ height: 2000 }}>
+
       <button onClick={YoutubeModal}>=</button>
       <br />
       {youTube && <ModalSidebar onClose={hideModal} />}
@@ -61,8 +63,11 @@ const Bootstrap = () => {
       <Carousels imageList={imageList} />
 
       {showModal && <Modal onClose={hideModal} onSubmit={onSunmitName} />}
+
+
       {showModal && <Backdrop onClick={() => setShowModal(false)} />}
       {showModal2 && <Backdrop onClick={() => setShowModal2(false)} />}
+      {youTube && <Backdrop onClick={() => setYouTube(false)} />}
     </div>
   );
 };
