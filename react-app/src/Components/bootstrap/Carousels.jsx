@@ -40,21 +40,6 @@ const Carousels = ({ imageList }) => {
     </Wrapper>
   );
 };
-const IndexList = styled.div`
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-const BtnIndex = styled.button`
-  background: #f1bfbf;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
-  background: ${({ active }) => active && "black"};
-`;
 const Wrapper = styled.div`
   width: 800px;
   height: 600px;
@@ -99,5 +84,22 @@ const BtnRight = styled.button`
   transform: translateY(-50%);
   transform: rotate(270deg);
 `;
+const IndexList = styled.div`
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+const BtnIndex = styled.button`
+  background: #f1bfbf;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background: ${({ active }) => active && "black"};
+`;
+
+
 
 export default Carousels;

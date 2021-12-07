@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import styled from "styled-components";
 
 const DropdownProfile = () => {
@@ -29,16 +29,16 @@ const DropdownProfile = () => {
         <Item>단축키</Item>
       </Menu>
       <Footer>
-        <Menu>
-          <Item>제한 모드: 사용 안함</Item>
-        </Menu>
+        <FooterMenu>
+          <FooterItem>제한 모드: 사용 안함</FooterItem>
+        </FooterMenu>
       </Footer>
     </Container>
   );
 };
 const Container = styled.div`
-  top: 74px;
-  right: 20px;
+  top: 82px;
+  right: 50px;
   width: 300px;
   border: 1px solid #ddd;
   position: absolute;
@@ -56,11 +56,14 @@ const Profile = styled.div`
 const Img = styled.img`
   padding: 20px 10px;
   width: 45px;
+  cursor: pointer;
 `;
 const Name = styled.span``;
 const Control = styled.a`
   font-size: 14px;
   padding-top: 10px;
+  color: #243cc4;
+  cursor: pointer;
 `;
 const Menu = styled.ul`
   list-style: none;
@@ -74,5 +77,9 @@ const Item = styled.li`
     background: #ece4e4;
   }
 `;
+const FooterMenu = styled.ul`
+  list-style: none;`
+const FooterItem = styled(Item)`
+`
 const Footer = styled.div``;
 export default DropdownProfile;

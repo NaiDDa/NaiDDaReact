@@ -50,13 +50,7 @@ const Body = styled.div`
 `;
 const Accordion2 = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const handleClick = () => {
-    // const newData = data.map((item) => ({
-    //   ...item,
-    //   active: item.id === id ? !item.active : false,
-    // }));
-    // setData(newData);
-  };
+
 
   const handleIndex = (index) => {
     if (index === activeIndex) {
@@ -64,8 +58,6 @@ const Accordion2 = ({ data }) => {
     } else {
       setActiveIndex(index);
     }
-    // const nextIndex = index === activeIndex ? index : -1;
-    // setActiveIndex(nextIndex);
   };
 
   return (

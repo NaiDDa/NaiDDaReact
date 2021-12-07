@@ -17,7 +17,7 @@ const Box = styled.div`
   display: flex;
   padding: 10px;
 `;
-const Box2 = styled.div``;
+
 
 const Group = () => {
   return (
@@ -32,7 +32,7 @@ const Group = () => {
                 <GroupItem>{name}</GroupItem>
               </Box>
               {items.map((item) => (
-                <h2>{item.name}</h2>
+                <span>{item.name}</span>
               ))}
             </>
           ))}

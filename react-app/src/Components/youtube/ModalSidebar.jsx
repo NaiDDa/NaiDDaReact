@@ -12,12 +12,40 @@ const ModalSidebar = ({ onClose }) => {
   return (
     <div>
       <Sidebar collapse={collapse}>
-        <Btn onClick={close}>=</Btn>
+        <Header>
+          <Btn onClick={close}>=</Btn>
+        </Header>
+        <ItemList>
+          <Item>홈</Item>
+          <Item>탐색</Item>
+          <Item>구독</Item>
+        </ItemList>
+        <ItemList>
+          <Item>보관함</Item>
+          <Item>시청 기록</Item>
+          <Item>내 동영상</Item>
+          <Item>나중에 볼 동영상</Item>
+          <Item>좋아요 표시한 동영상</Item>
+        </ItemList>
       </Sidebar>
       <Backdrop collapse={collapse} onClick={close} />
     </div>
   );
 };
+const Header = styled.div``
+const ItemList = styled.ul`
+list-style: none;
+font-size: 18px;
+border-bottom: 1px solid #ccc;
+padding-bottom: 15px;
+padding: 0 20px;
+`
+const Item = styled.li`
+padding: 10px;
+cursor: pointer;
+&:hover {
+  background: #eeeeee;
+}`
 const SidebarSlide = keyframes`
 from {
   left : -240px
@@ -42,6 +70,7 @@ const Btn = styled.button`
   background: #fff;
   font-size: 30px;
   cursor: pointer;
+  padding-left: 30px;
 `;
 
 export default ModalSidebar;

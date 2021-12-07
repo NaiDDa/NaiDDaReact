@@ -38,6 +38,7 @@ const Container = styled.div`
   z-index: 100;
   position: fixed;
   background: #fff;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
 `;

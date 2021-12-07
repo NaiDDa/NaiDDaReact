@@ -30,6 +30,7 @@ const Notice = styled.img`
   padding: 8px;
 `;
 const SideBtn = styled.button`
+  cursor: pointer;
   border: none;
   background: #fff;
   font-size: 30px;
