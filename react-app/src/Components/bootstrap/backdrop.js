@@ -4,12 +4,14 @@ const modalSlide = keyframes`
         opacity: 0;
     }
     to {
-        opacity: 1;
+        opacity: 0.5;
     }
 `;
 
 const Backdrop = styled.div`
-  background: rgba(0, 0, 0, 0.5);
+  background: #000;
+  opacity: ${({ collapse }) => (collapse ? "0" : "0.5")};
+  transition: opacity 0.3s ease-out;
   width: 100vw;
   height: 100vh;
   position: fixed;

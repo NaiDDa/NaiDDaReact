@@ -2,27 +2,38 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Backdrop from "../bootstrap/backdrop";
 const ModalSidebar = ({ onClose }) => {
-  const Close = () => {
-    onClose();
+  const [collapse, setCollapse] = useState(false);
+
+  const close = () => {
+    setCollapse(true);
+    setTimeout(onClose, 300);
   };
+
   return (
     <div>
-      <Sidebar>
-        <Btn onClick={Close}>=</Btn>
+      <Sidebar collapse={collapse}>
+        <Btn onClick={close}>=</Btn>
       </Sidebar>
-      <Backdrop />
+      <Backdrop collapse={collapse} onClick={close} />
     </div>
   );
 };
 const SidebarSlide = keyframes`
-
+from {
+  left : -240px
+}
+to {
+  left : 0
+}
 `;
 const Sidebar = styled.div`
+  animation: ${SidebarSlide} 0.3s ease-out;
   width: 240px;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  transition: left 0.3s ease-out;
+  left: ${({ collapse }) => (collapse ? "-240px" : "0")};
   background: #fff;
   z-index: 100;
 `;
