@@ -17,9 +17,7 @@ const Box = styled.div`
   display: flex;
   padding: 10px;
 `;
-const Box2 = styled.div`
-
-`;
+const Box2 = styled.div``;
 
 const Group = () => {
   return (
