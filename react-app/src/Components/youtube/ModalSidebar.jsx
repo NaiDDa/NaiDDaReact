@@ -1,6 +1,10 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Backdrop from "../bootstrap/backdrop";
+import Hamburger_icon from "../../a/images/Hamburger_icon.png";
+import logo from "../../a/images/logo.png";
+import DropdownMenu from "./DropdownMenu";
+import { sideFirstMenu, sidecenterMenu } from "../../data/menu";
 const ModalSidebar = ({ onClose }) => {
   const [collapse, setCollapse] = useState(false);
 
@@ -13,39 +17,30 @@ const ModalSidebar = ({ onClose }) => {
     <div>
       <Sidebar collapse={collapse}>
         <Header>
-          <Btn onClick={close}>=</Btn>
+          <Btn onClick={close}>
+            <Img src={Hamburger_icon} alt="#" />
+          </Btn>
+          <Logo src={logo}></Logo>
         </Header>
-        <ItemList>
-          <Item>홈</Item>
-          <Item>탐색</Item>
-          <Item>구독</Item>
-        </ItemList>
-        <ItemList>
-          <Item>보관함</Item>
-          <Item>시청 기록</Item>
-          <Item>내 동영상</Item>
-          <Item>나중에 볼 동영상</Item>
-          <Item>좋아요 표시한 동영상</Item>
-        </ItemList>
+
+        <DropdownMenu data={sideFirstMenu} />
+        <DropdownMenu data={sidecenterMenu} />
       </Sidebar>
       <Backdrop collapse={collapse} onClick={close} />
     </div>
   );
 };
-const Header = styled.div``
-const ItemList = styled.ul`
-list-style: none;
-font-size: 18px;
-border-bottom: 1px solid #ccc;
-padding-bottom: 15px;
-padding: 0 20px;
-`
-const Item = styled.li`
-padding: 10px;
-cursor: pointer;
-&:hover {
-  background: #eeeeee;
-}`
+const Logo = styled.img`
+  width: 80px;
+  height: 30px;
+  border-radius: 6px;
+`;
+const Img = styled.img`
+  width: 25px;
+`;
+const Header = styled.div`
+  padding: 10px;
+`;
 const SidebarSlide = keyframes`
 from {
   left : -240px
@@ -70,7 +65,7 @@ const Btn = styled.button`
   background: #fff;
   font-size: 30px;
   cursor: pointer;
-  padding-left: 30px;
+  padding: 10px;
 `;
 
 export default ModalSidebar;

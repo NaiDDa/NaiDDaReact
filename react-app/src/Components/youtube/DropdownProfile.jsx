@@ -1,9 +1,15 @@
-
 import styled from "styled-components";
+import premium from "../../a/images/premium.png";
+import { firstMenuData, centerMenuData } from "../../data/menu";
+import DropdownMenu from "./DropdownMenu";
+import { useDropdownClickBody } from "../../hooks/index";
+import { useRef } from "react";
 
-const DropdownProfile = () => {
+const DropdownProfile = ({ onClose }) => {
+  const dropdownEl = useRef(null);
+  useDropdownClickBody(dropdownEl, onClose);
   return (
-    <Container>
+    <Container ref={dropdownEl}>
       <Header>
         <Img src="https://yt3.ggpht.com/yti/APfAmoH3YeAHexuBaiQ16UEUmayXD8FzSx6cRde3O-dOIw=s108-c-k-c0x00ffffff-no-rj" />
         <Profile>
@@ -11,31 +17,23 @@ const DropdownProfile = () => {
           <Control>Google 계정 관리</Control>
         </Profile>
       </Header>
-      <Menu>
-        <Item>내 채널</Item>
-        <Item>구매 항목 및 멤버십</Item>
-        <Item>YouTube 스튜디오</Item>
-        <Item>계정 전환</Item>
-        <Item>로그아웃</Item>
-      </Menu>
-      <Menu>
-        <Item>디자인: 기기 테마</Item>
-        <Item>언어: 한국어</Item>
-        <Item>위치: 한국</Item>
-        <Item>설정</Item>
-        <Item>YouTube의 내 데이터</Item>
-        <Item>고객센터</Item>
-        <Item>의견 보내기</Item>
-        <Item>단축키</Item>
-      </Menu>
-      <Footer>
-        <FooterMenu>
-          <FooterItem>제한 모드: 사용 안함</FooterItem>
-        </FooterMenu>
-      </Footer>
+      <DropdownMenu data={firstMenuData} />
+      <DropdownMenu data={centerMenuData} />
+
+      <FooterMenu>
+        <FooterItem>
+          <ImgItem src={premium} />
+          제한 모드: 사용 안함
+        </FooterItem>
+      </FooterMenu>
     </Container>
   );
 };
+const ImgItem = styled.img`
+  width: 24px;
+  height: 24px;
+  padding-right: 8px;
+`;
 const Container = styled.div`
   top: 82px;
   right: 50px;
@@ -54,6 +52,7 @@ const Profile = styled.div`
   flex-direction: column;
 `;
 const Img = styled.img`
+  border-radius: 50%;
   padding: 20px 10px;
   width: 45px;
   cursor: pointer;
@@ -65,11 +64,11 @@ const Control = styled.a`
   color: #243cc4;
   cursor: pointer;
 `;
-const Menu = styled.ul`
+const FooterMenu = styled.ul`
+  padding: 0 10px;
   list-style: none;
-  border-bottom: 1px solid #ddd;
 `;
-const Item = styled.li`
+const FooterItem = styled.li`
   font-size: 14px;
   padding: 10px;
   cursor: pointer;
@@ -77,9 +76,5 @@ const Item = styled.li`
     background: #ece4e4;
   }
 `;
-const FooterMenu = styled.ul`
-  list-style: none;`
-const FooterItem = styled(Item)`
-`
-const Footer = styled.div``;
+
 export default DropdownProfile;
