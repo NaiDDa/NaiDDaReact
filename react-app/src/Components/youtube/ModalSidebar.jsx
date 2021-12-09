@@ -3,11 +3,19 @@ import styled, { keyframes } from "styled-components";
 import Backdrop from "../bootstrap/backdrop";
 import Hamburger_icon from "../../a/images/Hamburger_icon.png";
 import logo from "../../a/images/logo.png";
-import DropdownMenu from "./DropdownMenu";
-import { sideFirstMenu, sidecenterMenu } from "../../data/menu";
+import Menu from "./Menu";
+import { useBodyOverflowHidden } from "../../hooks/useBodyOverflowHidden";
+import {
+  sidebarMenuData1,
+  sidebarMenuData2,
+  sidebarMenuMoreData3,
+  sidebarMenuData3,
+  sidebarMenuData4,
+  sidebarMenuData5,
+} from "../../data/menuData";
 const ModalSidebar = ({ onClose }) => {
   const [collapse, setCollapse] = useState(false);
-
+  useBodyOverflowHidden();
   const close = () => {
     setCollapse(true);
     setTimeout(onClose, 300);
@@ -22,23 +30,33 @@ const ModalSidebar = ({ onClose }) => {
           </Btn>
           <Logo src={logo}></Logo>
         </Header>
-
-        <DropdownMenu data={sideFirstMenu} />
-        <DropdownMenu data={sidecenterMenu} />
+        <Bottom>
+          <Menu data={sidebarMenuData1} />
+          <Menu data={sidebarMenuData2} />
+          <Menu title="구독" data={sidebarMenuData3} defaultCount={7} />
+          <Menu title="Youtube 더보기" data={sidebarMenuData4} />
+          <Menu data={sidebarMenuData5} />
+        </Bottom>
       </Sidebar>
       <Backdrop collapse={collapse} onClick={close} />
     </div>
   );
 };
+const Bottom = styled.div`
+  overflow: auto;
+`;
 const Logo = styled.img`
-  width: 80px;
+  width: 85px;
   height: 30px;
   border-radius: 6px;
+  cursor: pointer;
 `;
 const Img = styled.img`
   width: 25px;
 `;
 const Header = styled.div`
+  display: flex;
+  align-items: center;
   padding: 10px;
 `;
 const SidebarSlide = keyframes`
@@ -59,6 +77,8 @@ const Sidebar = styled.div`
   left: ${({ collapse }) => (collapse ? "-240px" : "0")};
   background: #fff;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
 `;
 const Btn = styled.button`
   border: none;

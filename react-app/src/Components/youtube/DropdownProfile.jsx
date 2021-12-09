@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import premium from "../../a/images/premium.png";
-import { firstMenuData, centerMenuData } from "../../data/menu";
-import DropdownMenu from "./DropdownMenu";
+import { firstMenuData, centerMenuData } from "../../data/menuData";
+import Menu from "./Menu";
 import { useDropdownClickBody } from "../../hooks/index";
 import { useRef } from "react";
 
@@ -17,8 +17,8 @@ const DropdownProfile = ({ onClose }) => {
           <Control>Google 계정 관리</Control>
         </Profile>
       </Header>
-      <DropdownMenu data={firstMenuData} />
-      <DropdownMenu data={centerMenuData} />
+      <Menu data={firstMenuData} />
+      <Menu data={centerMenuData} />
 
       <FooterMenu>
         <FooterItem>

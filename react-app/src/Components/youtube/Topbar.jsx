@@ -50,13 +50,15 @@ const BtnSearcg = styled.button`
 `;
 const Logo = styled.img`
   width: 100px;
-  height: 30px;
+  height: 50px;
   padding: 8px;
+  cursor: pointer;
 `;
 const Notice = styled.img`
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   padding: 8px;
+  cursor: pointer;
 `;
 const Img = styled.img`
   width: 25px;
@@ -72,6 +74,7 @@ const DropdownWrapper = styled.div`
   padding: 20px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex: 1;
 `;
 const Container = styled.div`
@@ -91,8 +94,8 @@ const BtnProfile = styled.button`
 `;
 const ImgProfile = styled.img`
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   padding: 8px;
 `;

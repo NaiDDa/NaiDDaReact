@@ -6,9 +6,8 @@ function App() {
   return (
     <>
       <Youtube />
-      <Bootstrap /> 
-      <Group />
-      <Carousels /> 
+      {/* <Bootstrap />
+      <Carousels /> */}
     </>
   );
 }
