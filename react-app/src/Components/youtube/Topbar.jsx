@@ -14,7 +14,7 @@ const Topbar = ({ onOpenSidebar }) => {
         <Img onClick={onOpenSidebar} src={Hamburger_icon}></Img>
         <Logo src={logo}></Logo>
         <SeacrcWrapper>
-          <InputSearch placeholder=" 검색"></InputSearch>
+          <InputSearch placeholder=" 검색" />
           <BtnSearcg>검색</BtnSearcg>
         </SeacrcWrapper>
         <DropdownWrapper>

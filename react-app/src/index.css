@@ -16,7 +16,7 @@ code {
   box-sizing: border-box;
 }
 *::-webkit-scrollbar {
-  display: none;
+  display: block;
   width: 10px;
 }
 *:hover::-webkit-scrollbar {
