@@ -6,10 +6,10 @@ const Main = () => {
     <>
       <Wrapper>
         <Link to="/movie">
-          <BtnMovie>영화 검색</BtnMovie>
+          <BtnMovie>Movie Search</BtnMovie>
         </Link>
         <Link to="/book">
-          <BtnBook>책 검색</BtnBook>
+          <BtnBook>Book Search</BtnBook>
         </Link>
       </Wrapper>
     </>
@@ -21,22 +21,15 @@ const Wrapper = styled.div`
   align-items: center;
   margin-top: 60px;
 `;
-const BtnMovie = styled.button`
+const Btn = styled.button`
   width: 300px;
   height: 100px;
-  font-size: 20px;
+  font-size: 18px;
   background: #fff;
   border-radius: 4px;
-  border: 2px solid #ddd;
-  margin: 20px;
+  border: 2px solid #5f5e5e;
+  margin: 10px;
 `;
-const BtnBook = styled.button`
-  width: 300px;
-  height: 100px;
-  font-size: 20px;
-  background: #fff;
-  border-radius: 4px;
-  border: 2px solid #ddd;
-  margin: 20px;
-`;
+const BtnMovie = styled(Btn)``;
+const BtnBook = styled(Btn)``;
 export default Main;

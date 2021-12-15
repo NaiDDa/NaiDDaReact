@@ -12,9 +12,8 @@ const BookList = ({ data }) => {
               <Danger>{title}</Danger>
             </Title>
             <Subtitle>
-              <Author>
-                저자 : <Danger>{author}</Danger>
-              </Author>
+              저자 : <Danger>{author}</Danger>
+              <br />
               출판사:
               <Danger>{publisher}</Danger>
               <br />
@@ -29,12 +28,12 @@ const BookList = ({ data }) => {
   );
 };
 
-const Author = styled.div``;
 const List = styled.div`
-  width: 500px;
+  width: 400px;
   height: 200px;
 `;
 const Item = styled.ul`
+  border-bottom: 5px solid #ddd;
   display: flex;
   align-items: center;
   list-style: none;
@@ -44,17 +43,17 @@ const Item = styled.ul`
 const Image = styled.img`
   width: 150px;
   height: 200px;
+  border: 2px solid #c5c5c5;
 `;
 const Title = styled.div`
   width: 150px;
-  font-size: 17px;
+  font-size: 18px;
   color: #000;
-  border-right: 2px solid #ddd;
+  border-right: 2px solid #c5c5c5;
   text-decoration: none;
 `;
 const Subtitle = styled.li`
-  width: 150px;
-  text-align: center;
+  width: 120px;
   font-size: 14px;
   color: #000;
 `;

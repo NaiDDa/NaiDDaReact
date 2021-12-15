@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const MovieList = ({ data }) => {
   return (
     <List>

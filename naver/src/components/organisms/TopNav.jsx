@@ -6,13 +6,13 @@ const TopNav = () => {
       <Nav>
         <LinkList>
           <Link to="/">
-            <LinkItem>메인</LinkItem>
+            <LinkItem>🏠</LinkItem>
           </Link>
           <Link to="/movie">
-            <LinkItem>영화</LinkItem>
+            <LinkItem>Movie</LinkItem>
           </Link>
           <Link to="/book">
-            <LinkItem>책</LinkItem>
+            <LinkItem>Book</LinkItem>
           </Link>
         </LinkList>
       </Nav>
@@ -25,6 +25,7 @@ const Container = styled.div`
   padding: 0 20px;
   height: 50px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background: #424242;
 `;
 const Nav = styled.nav``;
 const LinkList = styled.ul`
@@ -35,6 +36,7 @@ const LinkList = styled.ul`
   align-items: center;
 `;
 const LinkItem = styled.li`
+  color: #fff;
   margin: 0 10px;
 `;
 export default TopNav;

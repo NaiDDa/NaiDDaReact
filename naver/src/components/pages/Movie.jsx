@@ -1,34 +1,55 @@
 import styled from "styled-components";
-import { MovieList } from "../organisms";
+import { MovieList, Pagination } from "../organisms";
 import { getMovieList } from "../../apis/MovieApi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Movie = () => {
+  const [isLoading, setIsloading] = useState(false);
   const [query, setQuery] = useState("");
+  const [vlaue, setValue] = useState("");
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
   const [movieList, setMovieList] = useState([]);
+  useEffect(() => {
+    if (query) {
+      searchList();
+    }
+  }, [page, query]);
   const handleChange = (e) => {
-    setQuery(e.target.value);
+    setValue(e.target.value);
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const params = { query: query };
-    const result = await getMovieList(params);
-    setMovieList(result.items);
+    setPage(1);
+    setQuery(vlaue);
   };
-
-  const handleClick = () => {};
+  const searchList = async () => {
+    setIsloading(true);
+    const start = (page - 1) * 10 + 1;
+    const params = { query, start };
+    const { items, total } = await getMovieList(params);
+    setMovieList(items);
+    setTotal(total);
+  };
   return (
     <>
       <MovieBox>
         <Form onSubmit={handleSubmit}>
           <InputQuery
             onChange={handleChange}
-            value={query}
+            value={vlaue}
             placeholder="검색어를 입력하세요"
           />
-          <button onClick={handleClick}>검색</button>
+          <button>검색</button>
         </Form>
+
         <MovieList data={movieList} />
       </MovieBox>
+
+      <Pagination
+        onChange={(page) => setPage(page)}
+        total={total}
+        nowPage={page}
+      />
     </>
   );
 };
