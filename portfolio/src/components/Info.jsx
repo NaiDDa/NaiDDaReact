@@ -62,13 +62,13 @@ const Info = () => {
           </InfoBox>
           <Title>I AM..</Title>
           <Introduce>
-            안녕하세요. 저는 신입 프론트엔드 개발자 김승환입니다.
-            웹개발과는 거리가 먼 직장을 다니다가 우연하게 웹개발이라는 직업중
-            프론트엔드 라는 직업에 흥미를 가지기 시작해서
+            안녕하세요. 저는 신입 프론트엔드 개발자 김승환입니다. 웹개발과는
+            거리가 먼 직장을 다니다가 우연하게 웹개발이라는 직업중 프론트엔드
+            라는 직업에 흥미를 가지기 시작해
             <br />
-            퇴근 후 프론트엔드 인강을 듣게되었습니다. 공부를 하던중 막히는
+            퇴근 후 프론트엔드 인터넷강의을 듣게되었습니다. 공부를 하던중 막히는
             부분이 있었지만 막힌 부분을 해결해 가면서 프론트에 대한 부족한
-            지식을 얻을때마다 성취감을 느끼게 되었습니다. 좀더 공부에 집중하고자
+            지식을 얻을때마다 성취감을 느끼고는 했습니다. 좀더 공부에 집중하고자
             직장을 그만두고 국비지원을 통해 프론트엔드 에 대한 공부를 하며
             성장하고 있는중입니다!
           </Introduce>
@@ -162,7 +162,9 @@ const NameBox = styled.div`
   padding: 30px 25px;
 `;
 const NameTitle = styled.h3``;
-const Name = styled.h5``;
+const Name = styled.h5`
+  font-weight: normal;
+`;
 const Introduce = styled.p`
   text-align: center;
   font-size: 14px;
