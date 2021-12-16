@@ -1,25 +1,26 @@
 import styled from "styled-components";
-const MovieList = ({ data }) => {
+const BoxOffice = ({ data }) => {
   return (
-    <List>
-      {data.map(({ title, link, image, director, pubDate, actor }) => (
-        <a href={link} target="_blank" rel="noreferrer" key={link}>
-          <Item key={link}>
-            <Image src={image} />
-            <Title dangerouslySetInnerHTML={{ __html: title }}></Title>
-            <Subtitle>
-              <Author>감독 :{director}</Author>
-              제작년도: {pubDate}
-              <br />
-              배우 : {actor}
-            </Subtitle>
-          </Item>
-        </a>
-      ))}
-    </List>
+    <>
+      <List>
+        {data.map(({ title, link, image, director, pubDate, actor }) => (
+          <a href={link} target="_blank" rel="noreferrer" key={link}>
+            <Item key={link}>
+              <Image src={image} />
+              <Title dangerouslySetInnerHTML={{ __html: title }}></Title>
+              <Subtitle>
+                <Author>감독 :{director}</Author>
+                제작년도: {pubDate}
+                <br />
+                배우 : {actor}
+              </Subtitle>
+            </Item>
+          </a>
+        ))}
+      </List>
+    </>
   );
 };
-
 const Author = styled.div`
   border-bottom: 2px solid #ddd;
   padding: 10px;
@@ -52,4 +53,4 @@ const Subtitle = styled.li`
   border-bottom: 2px solid #ddd;
   color: #000;
 `;
-export default MovieList;
+export default BoxOffice;

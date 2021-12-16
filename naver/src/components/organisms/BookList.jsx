@@ -30,7 +30,6 @@ const BookList = ({ data }) => {
 
 const List = styled.div`
   width: 400px;
-  height: 200px;
 `;
 const Item = styled.ul`
   border-bottom: 5px solid #ddd;

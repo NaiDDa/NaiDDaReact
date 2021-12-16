@@ -1,19 +1,34 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const IinkList = [
+  {
+    link: "/",
+    name: "🏠",
+  },
+  {
+    link: "/movie",
+    name: "Movie",
+  },
+  {
+    link: "/book",
+    name: "Book",
+  },
+];
 const TopNav = () => {
+  let { pathname } = useLocation();
+
+  if (pathname === "/") return <></>;
+
   return (
     <Container>
       <Nav>
         <LinkList>
-          <Link to="/">
-            <LinkItem>🏠</LinkItem>
-          </Link>
-          <Link to="/movie">
-            <LinkItem>Movie</LinkItem>
-          </Link>
-          <Link to="/book">
-            <LinkItem>Book</LinkItem>
-          </Link>
+          {IinkList.map(({ link, name }) => (
+            <Link to={link} key={link}>
+              <LinkItem active={link === pathname}>{name}</LinkItem>
+            </Link>
+          ))}
         </LinkList>
       </Nav>
     </Container>
@@ -36,6 +51,9 @@ const LinkList = styled.ul`
   align-items: center;
 `;
 const LinkItem = styled.li`
+  background: ${({ active }) => active && "#000"};
+  padding: 5px;
+  border-radius: 8px;
   color: #fff;
   margin: 0 10px;
 `;
