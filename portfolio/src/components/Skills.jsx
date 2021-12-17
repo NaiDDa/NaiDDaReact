@@ -5,7 +5,7 @@ const Skills = () => {
     <>
       <Content>
         <Wrapper>
-          <Title>Skills</Title>
+          <Title>SKILLS</Title>
           <SkillBox>
             <ImgBox>
               <Position>FRONTEND</Position>
@@ -25,11 +25,14 @@ const Skills = () => {
   );
 };
 const Content = styled.div`
-  background: #ddd;
+  background: #eaeaf7;
   height: 770px;
+
 `;
 const Wrapper = styled.div`
   margin: 50px 200px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
 `;
 const Title = styled.h1`
   text-align: center;
