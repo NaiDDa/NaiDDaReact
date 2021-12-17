@@ -45,16 +45,15 @@ const Movie = () => {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [movieList, setMovieList] = useState([]);
-  const [boxOfficeList, setBoxOfficeList] = useState([]);
+  //const [boxOfficeList, setBoxOfficeList] = useState([]);
 
-  useEffect(() => {
-    renderBoxOffice();
-  }, []);
-  const renderBoxOffice = async () => {
-    const result = await getBoxOfficeList();
-    setBoxOfficeList(result.params);
-  };
-
+  // useEffect(() => {
+  //   renderBoxOffice();
+  // }, []);
+  // const renderBoxOffice = async () => {
+  //   const result = await getBoxOfficeList();
+  //   setBoxOfficeList(result);
+  // };
   const handleCountry = (e) => {
     setCountry(e.target.value);
     setPage(1);
@@ -112,8 +111,6 @@ const Movie = () => {
         total={total}
         nowPage={page}
       />
-
-      <BoxOffice data={boxOfficeList} />
     </>
   );
 };

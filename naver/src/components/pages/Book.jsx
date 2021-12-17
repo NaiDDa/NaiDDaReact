@@ -2,13 +2,24 @@ import styled from "styled-components";
 import { BookList, Pagination } from "../organisms";
 import { getBookList } from "../../apis/BookApi";
 import { useState, useEffect } from "react";
+import qs from "qs";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Book = () => {
+  const navigate = useNavigate();
+  const { search } = useLocation();
   const [query, setQuery] = useState("");
-  const [vlaue, setValue] = useState("");
+  const [value, setValue] = useState("");
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [bookList, setBookList] = useState([]);
+
+  useEffect(() => {
+    const { query } = qs.parse(search.slice(1));
+    setQuery(query);
+    setValue(query);
+  }, [search]);
+
   useEffect(() => {
     if (query) {
       searchList();
@@ -21,7 +32,7 @@ const Book = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setPage(1);
-    setQuery(vlaue);
+    setQuery(value);
   };
   const searchList = async () => {
     const start = (page - 1) * 10 + 1;
@@ -29,6 +40,10 @@ const Book = () => {
     const { items, total } = await getBookList(params);
     setBookList(items);
     setTotal(total);
+
+    const search = qs.stringify({ query });
+    console.log(search);
+    navigate({ search });
   };
   return (
     <>
@@ -36,7 +51,7 @@ const Book = () => {
       <Form onSubmit={handleSubmit}>
         <InputQuery
           onChange={handleChange}
-          value={vlaue}
+          value={value}
           placeholder="검색어를 입력하세요"
         />
         <button>검색</button>
