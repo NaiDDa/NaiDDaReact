@@ -11,7 +11,7 @@ export const getMovieList = async (params) => {
   return result.data;
 };
 
-export const getBoxOfficeList = async () => {
+export const getBoxOfficeList = async (params) => {
   const result = await axios.get(
     "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json",
     {

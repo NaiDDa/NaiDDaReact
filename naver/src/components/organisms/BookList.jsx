@@ -1,36 +1,39 @@
 import styled from "styled-components";
 import { Danger } from "../atoms";
+import { Link } from "react-router-dom";
 
 const BookList = ({ data }) => {
   return (
     <List>
-      {data.map(({ title, link, image, author, publisher, pubdate, price }) => (
-        <a href={link} target="_blank" rel="noreferrer" key={link}>
-          <Item key={link}>
-            <Image src={image} />
-            <Title>
-              <Danger>{title}</Danger>
-            </Title>
-            <Subtitle>
-              저자 : <Danger>{author}</Danger>
-              <br />
-              출판사:
-              <Danger>{publisher}</Danger>
-              <br />
-              출간일: {pubdate}
-              <br />
-              정가: {price}
-            </Subtitle>
-          </Item>
-        </a>
-      ))}
+      {data.map(
+        ({ title, link, image, author, publisher, pubdate, price, isbn }) => (
+          <a href={link} target="_blank" rel="noreferrer" key={link}>
+            <Item key={isbn}>
+              <Link to={`/book/${isbn.split(" ")[1]}`}>
+                <Image src={image} />
+              </Link>
+              <Title>
+                <Danger>{title}</Danger>
+              </Title>
+              <Subtitle>
+                저자 : <Danger>{author}</Danger>
+                <br />
+                출판사:
+                <Danger>{publisher}</Danger>
+                <br />
+                출간일: {pubdate}
+                <br />
+                정가: {price}
+              </Subtitle>
+            </Item>
+          </a>
+        )
+      )}
     </List>
   );
 };
 
-const List = styled.div`
-  width: 400px;
-`;
+const List = styled.div``;
 const Item = styled.ul`
   border-bottom: 5px solid #ddd;
   display: flex;
@@ -40,8 +43,8 @@ const Item = styled.ul`
   margin: 10px;
 `;
 const Image = styled.img`
-  width: 150px;
-  height: 200px;
+  width: 120px;
+  height: 180px;
   border: 2px solid #c5c5c5;
 `;
 const Title = styled.div`
