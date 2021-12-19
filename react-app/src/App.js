@@ -1,13 +1,12 @@
-import Bootstrap from "./Components/bootstrap/Bootstrap";
+import Carousels from "./Components/bootstrap/Carousels";
 import Group from "./Components/GroupTest/Group";
-import Carousels from "./Components/Carousels/Carousels2";
 import Youtube from "./Components/youtube/Youtube";
+import News from "./Components/news/NewsMain";
 function App() {
   return (
     <>
-      <Youtube />
-      {/* <Bootstrap />
-      <Carousels /> */}
+      <News />
+
     </>
   );
 }
