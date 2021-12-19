@@ -12,7 +12,7 @@ const Project = () => {
             <Text>HTML, CSS , JS 을 탄탄히<br/> 하고자 만든 GitHub 클론코딩 입니다.</Text>
             <TextSub>클론코딩을 하며 반응형페이지에 대해 이해를 하였고<br/> Google 의 지도 Api 를 호출하여 사용하였습니다</TextSub>
             </Info>
-            <ProjectImage />
+            <ProjectImage src="img/clon.gif"/>
         </Item>
         </Wrapper>
       </Contents>
@@ -29,6 +29,12 @@ const Wrapper = styled.div`
   margin: 50px 200px;
 `
 const Item = styled.div`
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding-top: 25px;
+font-weight: 700;
+
 `;
 const Title = styled.h1`
   margin: 0;
@@ -38,7 +44,12 @@ const Title = styled.h1`
 `;
 const Info = styled.p``
 const ProjectTitle = styled.p``
-const Text = styled.p``
+const Text = styled.p`
+width: 300px;
+`
 const TextSub =styled.p``
-const ProjectImage = styled.img``
+const ProjectImage = styled.img`
+width: 500px;
+height: 300px;
+`
 export default Project;
