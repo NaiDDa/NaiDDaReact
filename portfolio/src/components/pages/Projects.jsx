@@ -41,10 +41,12 @@ const Projects = () => {
 
         <Item>
             <Info>
-            <ProjectTitle>영화 및 책검색 사이트</ProjectTitle>
-            <Text>React를 사용하여 만든 NewsPage 입니다.</Text>
-            <TextSub>Axios를 활용하여 News API 를 호출하였습니다.<br/>
-            News Page를 만들며 Promise 기반의 HTTP 통신<br/> 라이브러리인 Axios에 대해 이해하게 되었습니다.</TextSub>
+            <ProjectTitle>영화 및 책검색</ProjectTitle>
+            <Text>React를 사용하여 만든 영화 및 책검색 사이트 입니다.</Text>
+            <TextSub><br/>
+            Router를 사용하여 페이지 이동을 구현하고<br/>
+            네이버의 검색API 를 사용 하였습니다.
+             </TextSub>
             </Info>
             <ProjectImage2 src="img/MovieBook.gif"/>
         </Item>
